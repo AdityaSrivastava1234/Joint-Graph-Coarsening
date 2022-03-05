@@ -1,7 +1,7 @@
 import argparse
 import torch
 import torch.nn.functional as F
-from networks import Net
+from networks import Net,Net_GCN
 from torch import tensor
 from torch.optim import Adam
 from utils import load_data, coarsening
@@ -29,7 +29,8 @@ parser.add_argument('--K', type=int, default=10)
 parser.add_argument('--alpha', type=float, default=0.1)
 parser.add_argument('--coarsening_ratio', type=float, default=0.5)
 parser.add_argument('--coarsening_method', type=str, default='variation_neighborhoods')
-parser.add_argument('--jobid',type=str,default="abc_sr")
+parser.add_argument('--jobid',type=str,default="TEST",help="A unique ID associated with each experiment")
+parser.add_argument('--model',type=str,default="APPNP") # "APPNP", "GCN"
 
 # -------------------------------------------------- Feature Learning Related Arguments SitaRam _/\_ ------------------------------------------------------ 
 parser.add_argument('--features_mode',type=str,default=None) # 'RBF','CosSim','Smooth_Sigz'
@@ -60,7 +61,12 @@ if args.experiment is None:
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 args.num_features, args.num_classes, candidate, C_list, Gc_list = coarsening(args.dataset, 1-args.coarsening_ratio, args.coarsening_method, args)
-model = Net(args).to(device)
+if args.model == "APPNP":
+    model = Net(args).to(device)
+elif args.model == "GCN":
+    model = Net_GCN(args).to(device)
+else:
+    raise NotImplementedError("Model type not supported :(")
 all_acc = []
 
 for _ in range(args.runs):
