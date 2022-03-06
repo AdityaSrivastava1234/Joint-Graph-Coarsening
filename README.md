@@ -12,7 +12,7 @@ Code for the SPCOM 2022 paper "[Joint Feature and Adjacency Aware Graph Coarseni
 * matplotlib == 3.2.2
 
 ## Acknoledgement
-This codebase wouldn't have been possible without "[Scaling-Up-Graph-Neural-Networks-Via-Graph-Coarsening](https://github.com/szzhang17/Scaling-Up-Graph-Neural-Networks-Via-Graph-Coarsening)" 's github repo
+This codebase wouldn't have been possible without [Scaling-Up-Graph-Neural-Networks-Via-Graph-Coarsening's](https://github.com/szzhang17/Scaling-Up-Graph-Neural-Networks-Via-Graph-Coarsening) github repo
 
 ## Cite
 
