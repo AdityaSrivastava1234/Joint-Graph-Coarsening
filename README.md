@@ -1,5 +1,5 @@
 # Joint-Feature-and-Adjacency-Aware-Graph-Coarsening-for-GNN
-Code for the SPCOM 2022 paper "[Joint Feature and Adjacency Aware Graph Coarsening for GNN]((https://drive.google.com/file/d/1Iyb7lTTTeSNCHlFVXpCefjxgVHKEPeKo/view))"
+Code for the SPCOM 2022 paper "[Joint Feature and Adjacency Aware Graph Coarsening for GNN](https://drive.google.com/file/d/1Iyb7lTTTeSNCHlFVXpCefjxgVHKEPeKo/view)"
 
 ## Requirements
 * python == 3.6.10
